@@ -18,7 +18,10 @@ def health():
 @app.get('/api/config')
 def config():
     return jsonify(load_config())
-
+@app.get('/api/version')
+def version():
+    cfg = load_config()
+    return jsonify({'version': cfg['version']})
 @app.get('/')
 def home():
     cfg = load_config()

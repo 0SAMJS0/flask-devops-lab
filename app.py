@@ -6,7 +6,7 @@ import time
 from flask import Flask, jsonify, render_template_string
 
 app = Flask(__name__)
-
+START_TIME = time.time()
 def load_config(path='config.json'):
     with open(path, 'r') as f:
         return json.load(f)
